@@ -8,6 +8,8 @@ if len(sys.argv) == 1:
     parser.print_help()
     sys.exit(1)
 args = parser.parse_args()
+
+args.seq = args.seq.upper() # added this line
 if re.search('^[ACGTU]+$', args.seq):
    if re.search('T', args.seq):
       print ('The sequence is DNA')
